@@ -1,0 +1,704 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Documentation for Mileapp",
+        "description": "L5 Swagger OpenApi",
+        "contact": {
+            "email": "denniafredo@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://project.test/api/v1",
+            "description": "Demo API Server"
+        }
+    ],
+    "paths": {
+        "api/packages": {
+            "get": {
+                "tags": [
+                    "Package"
+                ],
+                "summary": "Get list of packages",
+                "description": "Return list of packages",
+                "operationId": "65eff075d9ac63f6efb4e1374ccd54b9",
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "format": "array",
+                                            "example": "{data:[package_data]}"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "api/package/{id}": {
+            "get": {
+                "tags": [
+                    "Package"
+                ],
+                "summary": "Get package information",
+                "description": "Return package information",
+                "operationId": "getPackageById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Package id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "format": "array",
+                                            "example": "{data:package_data}"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Package"
+                ],
+                "summary": "Delete package information",
+                "description": "Return delete status",
+                "operationId": "deletePackageById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Package id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Package deleted",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Package deleted"
+                                        },
+                                        "data": {
+                                            "type": "boolean",
+                                            "example": true
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Error : Conflict message"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Request Body",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Error validation"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "api/package": {
+            "put": {
+                "tags": [
+                    "Package"
+                ],
+                "summary": "Update existing package",
+                "description": "Return update status",
+                "operationId": "updatePackage",
+                "requestBody": {
+                    "description": "Request Body Credential",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "transaction_id",
+                                    "customer_name",
+                                    "customer_code",
+                                    "transaction_amount",
+                                    "transaction_discount",
+                                    "transaction_additional_field",
+                                    "transaction_payment_type",
+                                    "transaction_state",
+                                    "transaction_code",
+                                    "transaction_order",
+                                    "location_id",
+                                    "organization_id",
+                                    "created_at",
+                                    "updated_at",
+                                    "transaction_payment_type_name",
+                                    "transaction_cash_amount",
+                                    "transaction_cash_change",
+                                    "customer_attribute",
+                                    "connote_id",
+                                    "origin_data",
+                                    "destination_data",
+                                    "custom_field",
+                                    "currentLocation"
+                                ],
+                                "properties": {
+                                    "transaction_id": {
+                                        "type": "string",
+                                        "example": "d0090c40-539f-479a-8274-899b9970bddc"
+                                    },
+                                    "customer_name": {
+                                        "type": "string",
+                                        "example": "PT. AMARA PRIMATIGA"
+                                    },
+                                    "customer_code": {
+                                        "type": "string",
+                                        "example": "1678593"
+                                    },
+                                    "transaction_amount": {
+                                        "type": "string",
+                                        "example": "70700"
+                                    },
+                                    "transaction_discount": {
+                                        "type": "string",
+                                        "example": "0"
+                                    },
+                                    "transaction_additional_field": {
+                                        "type": "string",
+                                        "example": ""
+                                    },
+                                    "transaction_payment_type": {
+                                        "type": "string",
+                                        "example": "29"
+                                    },
+                                    "transaction_state": {
+                                        "type": "string",
+                                        "example": "PAID"
+                                    },
+                                    "transaction_code": {
+                                        "type": "string",
+                                        "example": "CGKFT20200715121"
+                                    },
+                                    "transaction_order": {
+                                        "type": "string",
+                                        "example": "121"
+                                    },
+                                    "location_id": {
+                                        "type": "string",
+                                        "example": "5cecb20b6c49615b174c3e74"
+                                    },
+                                    "organization_id": {
+                                        "type": "number",
+                                        "example": 6
+                                    },
+                                    "created_at": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2020-07-15T04:11:12.000000Z"
+                                    },
+                                    "updated_at": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2020-07-15T04:11:12.000000Z"
+                                    },
+                                    "transaction_payment_type_name": {
+                                        "type": "string",
+                                        "example": "Invoice"
+                                    },
+                                    "transaction_cash_amount": {
+                                        "type": "number",
+                                        "example": 0
+                                    },
+                                    "transaction_cash_change": {
+                                        "type": "number",
+                                        "example": 0
+                                    },
+                                    "customer_attribute": {
+                                        "type": "string",
+                                        "format": "array",
+                                        "example": {
+                                            "Nama_Sales": "Radit Fitrawikarsa",
+                                            "TOP": "14 Hari",
+                                            "Jenis_Pelanggan": "B2B"
+                                        }
+                                    },
+                                    "connote_id": {
+                                        "type": "string",
+                                        "example": "f70670b1-c3ef-4caf-bc4f-eefa702092ed"
+                                    },
+                                    "origin_data": {
+                                        "type": "string",
+                                        "format": "array",
+                                        "example": {
+                                            "customer_name": "PT. NARA OKA PRAKARSA",
+                                            "customer_address": "JL. KH. AHMAD DAHLAN NO. 100, SEMARANG TENGAH 12420",
+                                            "customer_email": "info@naraoka.co.id",
+                                            "customer_phone": "024-1234567",
+                                            "customer_address_detail": null,
+                                            "customer_zip_code": "12420",
+                                            "zone_code": "CGKFT",
+                                            "organization_id": "6",
+                                            "location_id": "5cecb20b6c49615b174c3e74"
+                                        }
+                                    },
+                                    "destination_data": {
+                                        "type": "string",
+                                        "format": "array",
+                                        "example": {
+                                            "customer_name": "PT AMARIS HOTEL SIMPANG LIMA",
+                                            "customer_address": "JL. KH. AHMAD DAHLAN NO. 01, SEMARANG TENGAH",
+                                            "customer_email": "null",
+                                            "customer_phone": "0248453499",
+                                            "customer_address_detail": "KOTA SEMARANG SEMARANG TENGAH KARANGKIDUL",
+                                            "customer_zip_code": "50241",
+                                            "zone_code": "SMG",
+                                            "organization_id": "6",
+                                            "location_id": "5cecb20b6c49615b174c3e74"
+                                        }
+                                    },
+                                    "custom_field": {
+                                        "type": "string",
+                                        "format": "array",
+                                        "example": {
+                                            "catatan_tambahan": "JANGAN DI BANTING \\\\/ DI TINDIH"
+                                        }
+                                    },
+                                    "currentLocation": {
+                                        "type": "string",
+                                        "format": "array",
+                                        "example": {
+                                            "name": "Hub Jakarta Selatan",
+                                            "code": "JKTS01",
+                                            "type": "Agent"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Package updated",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Package updated"
+                                        },
+                                        "data": {
+                                            "type": "boolean",
+                                            "example": "1"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Error : Conflict message"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Request Body",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Error validation"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Package"
+                ],
+                "summary": "Store new package",
+                "description": "Request Body Credential",
+                "operationId": "storePackage",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "transaction_id",
+                                    "customer_name",
+                                    "customer_code",
+                                    "transaction_amount",
+                                    "transaction_discount",
+                                    "transaction_additional_field",
+                                    "transaction_payment_type",
+                                    "transaction_state",
+                                    "transaction_code",
+                                    "transaction_order",
+                                    "location_id",
+                                    "organization_id",
+                                    "created_at",
+                                    "updated_at",
+                                    "transaction_payment_type_name",
+                                    "transaction_cash_amount",
+                                    "transaction_cash_change",
+                                    "customer_attribute",
+                                    "connote_id",
+                                    "origin_data",
+                                    "destination_data",
+                                    "custom_field",
+                                    "currentLocation"
+                                ],
+                                "properties": {
+                                    "transaction_id": {
+                                        "type": "string",
+                                        "example": "d0090c40-539f-479a-8274-899b9970bddc"
+                                    },
+                                    "customer_name": {
+                                        "type": "string",
+                                        "example": "PT. AMARA PRIMATIGA"
+                                    },
+                                    "customer_code": {
+                                        "type": "string",
+                                        "example": "1678593"
+                                    },
+                                    "transaction_amount": {
+                                        "type": "string",
+                                        "example": "70700"
+                                    },
+                                    "transaction_discount": {
+                                        "type": "string",
+                                        "example": "0"
+                                    },
+                                    "transaction_additional_field": {
+                                        "type": "string",
+                                        "example": ""
+                                    },
+                                    "transaction_payment_type": {
+                                        "type": "string",
+                                        "example": "29"
+                                    },
+                                    "transaction_state": {
+                                        "type": "string",
+                                        "example": "PAID"
+                                    },
+                                    "transaction_code": {
+                                        "type": "string",
+                                        "example": "CGKFT20200715121"
+                                    },
+                                    "transaction_order": {
+                                        "type": "string",
+                                        "example": "121"
+                                    },
+                                    "location_id": {
+                                        "type": "string",
+                                        "example": "5cecb20b6c49615b174c3e74"
+                                    },
+                                    "organization_id": {
+                                        "type": "number",
+                                        "example": 6
+                                    },
+                                    "created_at": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2020-07-15T04:11:12.000000Z"
+                                    },
+                                    "updated_at": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2020-07-15T04:11:12.000000Z"
+                                    },
+                                    "transaction_payment_type_name": {
+                                        "type": "string",
+                                        "example": "Invoice"
+                                    },
+                                    "transaction_cash_amount": {
+                                        "type": "number",
+                                        "example": 0
+                                    },
+                                    "transaction_cash_change": {
+                                        "type": "number",
+                                        "example": 0
+                                    },
+                                    "customer_attribute": {
+                                        "type": "string",
+                                        "format": "array",
+                                        "example": {
+                                            "Nama_Sales": "Radit Fitrawikarsa",
+                                            "TOP": "14 Hari",
+                                            "Jenis_Pelanggan": "B2B"
+                                        }
+                                    },
+                                    "connote_id": {
+                                        "type": "string",
+                                        "example": "f70670b1-c3ef-4caf-bc4f-eefa702092ed"
+                                    },
+                                    "origin_data": {
+                                        "type": "string",
+                                        "format": "array",
+                                        "example": {
+                                            "customer_name": "PT. NARA OKA PRAKARSA",
+                                            "customer_address": "JL. KH. AHMAD DAHLAN NO. 100, SEMARANG TENGAH 12420",
+                                            "customer_email": "info@naraoka.co.id",
+                                            "customer_phone": "024-1234567",
+                                            "customer_address_detail": null,
+                                            "customer_zip_code": "12420",
+                                            "zone_code": "CGKFT",
+                                            "organization_id": "6",
+                                            "location_id": "5cecb20b6c49615b174c3e74"
+                                        }
+                                    },
+                                    "destination_data": {
+                                        "type": "string",
+                                        "format": "array",
+                                        "example": {
+                                            "customer_name": "PT AMARIS HOTEL SIMPANG LIMA",
+                                            "customer_address": "JL. KH. AHMAD DAHLAN NO. 01, SEMARANG TENGAH",
+                                            "customer_email": "null",
+                                            "customer_phone": "0248453499",
+                                            "customer_address_detail": "KOTA SEMARANG SEMARANG TENGAH KARANGKIDUL",
+                                            "customer_zip_code": "50241",
+                                            "zone_code": "SMG",
+                                            "organization_id": "6",
+                                            "location_id": "5cecb20b6c49615b174c3e74"
+                                        }
+                                    },
+                                    "custom_field": {
+                                        "type": "string",
+                                        "format": "array",
+                                        "example": {
+                                            "catatan_tambahan": "JANGAN DI BANTING \\\\/ DI TINDIH"
+                                        }
+                                    },
+                                    "currentLocation": {
+                                        "type": "string",
+                                        "format": "array",
+                                        "example": {
+                                            "name": "Hub Jakarta Selatan",
+                                            "code": "JKTS01",
+                                            "type": "Agent"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Package created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Package created"
+                                        },
+                                        "data": {
+                                            "type": "boolean",
+                                            "example": "1"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Error : Conflict message"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Request Body",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Error validation"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Package"
+                ],
+                "summary": "Patch existing package",
+                "description": "Return patch status",
+                "operationId": "patchPackage",
+                "requestBody": {
+                    "description": "Request Body Credential",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "customer_name": {
+                                        "type": "string",
+                                        "example": "PT. AMARA PRIMATIGA"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Package patched",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Package patched"
+                                        },
+                                        "data": {
+                                            "type": "boolean",
+                                            "example": "1"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "409": {
+                        "description": "Conflict",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Error : Conflict message"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Request Body",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Error validation"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

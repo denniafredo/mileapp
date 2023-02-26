@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "45d1b89d-457f-420a-80ed-c4b59eb20ecc",
+		"name": "mileapp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23444689"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"transaction_id\": \"d0090c40-539f-479a-8274-899b9970bddc\",\r\n    \"customer_name\": \"PT. AMARA PRIMATIGA\",\r\n    \"customer_code\": \"1678593\",\r\n    \"transaction_amount\": \"70700\",\r\n    \"transaction_discount\": \"0\",\r\n    \"transaction_additional_field\": \"\",\r\n    \"transaction_payment_type\": \"29\",\r\n    \"transaction_state\": \"PAID\",\r\n    \"transaction_code\": \"CGKFT20200715121\",\r\n    \"transaction_order\": 121,\r\n    \"location_id\": \"5cecb20b6c49615b174c3e74\",\r\n    \"organization_id\": 6,\r\n    \"created_at\": \"2020-07-15T04:11:12.000000Z\",\r\n    \"updated_at\": \"2020-07-15T04:11:22.000000Z\",\r\n    \"transaction_payment_type_name\": \"Invoice\",\r\n    \"transaction_cash_amount\": 0,\r\n    \"transaction_cash_change\": 0,\r\n    \"customer_attribute\": {\r\n        \"Nama_Sales\": \"Radit Fitrawikarsa\",\r\n        \"TOP\": \"14 Hari\",\r\n        \"Jenis_Pelanggan\": \"B2B\"\r\n    },\r\n    \"connote_id\": \"f70670b1-c3ef-4caf-bc4f-eefa702092ed\",\r\n    \"origin_data\": {\r\n        \"customer_name\": \"PT. NARA OKA PRAKARSA\",\r\n        \"customer_address\": \"JL. KH. AHMAD DAHLAN NO. 100, SEMARANG TENGAH 12420\",\r\n        \"customer_email\": \"info@naraoka.co.id\",\r\n        \"customer_phone\": \"024-1234567\",\r\n        \"customer_address_detail\": null,\r\n        \"customer_zip_code\": \"12420\",\r\n        \"zone_code\": \"CGKFT\",\r\n        \"organization_id\": 6,\r\n        \"location_id\": \"5cecb20b6c49615b174c3e74\"\r\n    },\r\n    \"destination_data\": {\r\n        \"customer_name\": \"PT AMARIS HOTEL SIMPANG LIMA\",\r\n        \"customer_address\": \"JL. KH. AHMAD DAHLAN NO. 01, SEMARANG TENGAH\",\r\n        \"customer_email\": null,\r\n        \"customer_phone\": \"0248453499\",\r\n        \"customer_address_detail\": \"KOTA SEMARANG SEMARANG TENGAH KARANGKIDUL\",\r\n        \"customer_zip_code\": \"50241\",\r\n        \"zone_code\": \"SMG\",\r\n        \"organization_id\": 6,\r\n        \"location_id\": \"5cecb20b6c49615b174c3e74\"\r\n    },\r\n    \"custom_field\": {\r\n        \"catatan_tambahan\": \"JANGAN DI BANTING / DI TINDIH\"\r\n    },\r\n    \"currentLocation\": {\r\n        \"name\": \"Hub Jakarta Selatan\",\r\n        \"code\": \"JKTS01\",\r\n        \"type\": \"Agent\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/packages/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"packages",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"transaction_id\": \"d0090c40-539f-479a-8274-899b9970bddc\",\r\n    \"customer_name\": \"PT. AMARA PRIMATIGAssssssss\",\r\n    \"customer_code\": \"1678593\",\r\n    \"transaction_amount\": \"70700\",\r\n    \"transaction_discount\": \"0\",\r\n    \"transaction_additional_field\": \"\",\r\n    \"transaction_payment_type\": \"29\",\r\n    \"transaction_state\": \"PAID\",\r\n    \"transaction_code\": \"CGKFT20200715121\",\r\n    \"transaction_order\": 121,\r\n    \"location_id\": \"5cecb20b6c49615b174c3e74\",\r\n    \"organization_id\": 6,\r\n    \"created_at\": \"2020-07-15T04:11:12.000000Z\",\r\n    \"updated_at\": \"2020-07-15T04:11:22.000000Z\",\r\n    \"transaction_payment_type_name\": \"Invoice\",\r\n    \"transaction_cash_amount\": 0,\r\n    \"transaction_cash_change\": 0,\r\n    \"customer_attribute\": {\r\n        \"Nama_Sales\": \"Radit Fitrawikarsa\",\r\n        \"TOP\": \"14 Hari\",\r\n        \"Jenis_Pelanggan\": \"B2B\"\r\n    },\r\n    \"connote_id\": \"f70670b1-c3ef-4caf-bc4f-eefa702092ed\",\r\n    \"origin_data\": {\r\n        \"customer_name\": \"PT. NARA OKA PRAKARSA\",\r\n        \"customer_address\": \"JL. KH. AHMAD DAHLAN NO. 100, SEMARANG TENGAH 12420\",\r\n        \"customer_email\": \"info@naraoka.co.id\",\r\n        \"customer_phone\": \"024-1234567\",\r\n        \"customer_address_detail\": null,\r\n        \"customer_zip_code\": \"12420\",\r\n        \"zone_code\": \"CGKFT\",\r\n        \"organization_id\": 6,\r\n        \"location_id\": \"5cecb20b6c49615b174c3e74\"\r\n    },\r\n    \"destination_data\": {\r\n        \"customer_name\": \"PT AMARIS HOTEL SIMPANG LIMA\",\r\n        \"customer_address\": \"JL. KH. AHMAD DAHLAN NO. 01, SEMARANG TENGAH\",\r\n        \"customer_email\": null,\r\n        \"customer_phone\": \"0248453499\",\r\n        \"customer_address_detail\": \"KOTA SEMARANG SEMARANG TENGAH KARANGKIDUL\",\r\n        \"customer_zip_code\": \"50241\",\r\n        \"zone_code\": \"SMG\",\r\n        \"organization_id\": 6,\r\n        \"location_id\": \"5cecb20b6c49615b174c3e74\"\r\n    },\r\n    \"custom_field\": {\r\n        \"catatan_tambahan\": \"JANGAN DI BANTING \\\\/ DI TINDIH\"\r\n    },\r\n    \"currentLocation\": {\r\n        \"name\": \"Hub Jakarta Selatan\",\r\n        \"code\": \"JKTS01\",\r\n        \"type\": \"Agent\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/packages/63f9ebc2c330462e0a07ab52",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"packages",
+						"63f9ebc2c330462e0a07ab52"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "patch",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customer_code\": \"asdasda\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/packages/63f9ebc2c330462e0a07ab52",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"packages",
+						"63f9ebc2c330462e0a07ab52"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/api/packages/63f9e6b2f3524410680949f2",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"packages",
+						"63f9e6b2f3524410680949f2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

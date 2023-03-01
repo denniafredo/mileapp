@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## how to use
+## how to useasd
 - Database : Mongodb
 - Database Name : mileappdb
 

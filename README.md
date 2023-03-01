@@ -7,10 +7,10 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## how to use
+## how to use piw
 - Database : Mongodb
 - Database Name : mileappdb
-
+- awok
 ## Setting on .env
 - MONGO_DB_HOST=127.0.0.1  
 - MONGO_DB_PORT=27017  
